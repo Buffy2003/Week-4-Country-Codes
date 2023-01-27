@@ -1,7 +1,6 @@
 #Rashelle Ward
 #CIS261
 #Country Codes
-
 def display_menu():
     print("Command Menu")
     print("view -   View country name")
@@ -13,10 +12,10 @@ def display_menu():
 def display_codes(countries):
     codes = list(countries.keys())
     codes.sort()
-    codes_line = "Country codes: "
+    listofcodes = "Country codes: "
     for code in codes:
-        codes_line += code + " "
-    print(codes_line)
+        listofcodes += code + " "
+    print(listofcodes)
 
 def view(countries):
     display_codes(countries)
@@ -55,14 +54,13 @@ def main():
     display_menu()
     while True:
         command = input("Command: ")
-        command = command.lower()
-        if command == "view":
+        if command.lower() == "view":
             view(countries)
-        elif command == "add":
+        elif command.lower() == "add":
             add(countries)
-        elif command == "del":
+        elif command.lower() == "del":
             delete(countries)
-        elif command == "exit":
+        elif command.lower() == "exit":
             print("Good Bye!")
             break
         else:
